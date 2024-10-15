@@ -10,12 +10,18 @@
             background-color: aliceblue;
 
         }
-        .mezo{
-            background-color: black;
-            color: white;
-            border: 1px solid black;
-            width: 100px;
-            height: 100px;
+        .magyar{
+            display: inline-block;
+            margin-right: 50px;
+        
+        }
+        .angol{
+            display: inline-block;
+            margin-left: 50px;
+        }
+        button{
+            width: 150px;
+            height: 50px;
         }
     </style>
 </head>
@@ -28,30 +34,55 @@
         <div id="fodiv">
 
         </div>
+        <div id="fodivangol">
+
+        </div>
         <script>
-            const magyar = ["kutya", "macska", "okos", "gyönyörű"]
-            const angol = ["dog", "cat", "smart", "beautiful"]
+            const szotar = [
+                {
+                    magyar: "alma", angol: "apple"
+                    
+                },
+                {
+                    magyar: "okos", angol: "smart"
+                },
+                {
+                    magyar: "kutya", angol: "dog"
+                },
+                {
+                    magyar: "ország", angol: "country"
+                },
+                {
+                    magyar: "tűz", angol: "fire"
+                }
+        ]
             const fodiv = document.getElementById("fodiv")
             let button = document.getElementById("gomb")
+            const fodivangol = document.getElementById("fodivangol")
+            fodiv.className = "magyar"
+            fodivangol.className = "angol"
             button.addEventListener('click', 
             function(){
-                for (let i = 0; i< magyar.length-1; i++){
+                for (let i = 0; i< szotar.length; i++){
                     let div = document.createElement("div")
-
-                    for (let j = 0 ; j< magyar.length-1 ; j++){
-                        var span = document.createElement("span");
-                        span.className = "mezo"
-                        span.textContent = magyar[j]
-                        div.appendChild(span)
-                        
-
-                    }
+                    let angoldiv = document.createElement("div")
+                    var angolgomb = document.createElement("button");
+                    var gomb = document.createElement("button");
+                    gomb.textContent = szotar[i].magyar
+                    angolgomb.textContent = szotar[i].angol
+                    div.appendChild(gomb)
+                    angoldiv.appendChild(angolgomb)
                     fodiv.appendChild(div);
-                    span.textContent = "";
-                    
+                    fodivangol.appendChild(angoldiv)
                 }
                 document.body.appendChild(fodiv)
+                document.body.appendChild(fodivangol)
+                let mistake = 0;
+                let hiba = document.createElement("p")
+                hiba.textContent = "Ennyi hibát követtél el: ", mistake 
+                document.body.appendChild(hiba)
             })
+
         </script>
     </main>
 
