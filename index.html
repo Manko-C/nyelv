@@ -67,7 +67,9 @@
                     let div = document.createElement("div")
                     let angoldiv = document.createElement("div")
                     var angolgomb = document.createElement("button");
+                    angolgomb.classList.add("gombok")
                     var gomb = document.createElement("button");
+                    gomb.classList.add("gombok")
                     gomb.textContent = szotar[i].magyar
                     angolgomb.textContent = szotar[i].angol
                     div.appendChild(gomb)
@@ -79,10 +81,23 @@
                 document.body.appendChild(fodivangol)
                 let mistake = 0;
                 let hiba = document.createElement("p")
-                hiba.textContent = "Ennyi hibát követtél el: ", mistake 
+                hiba.textContent = "Ennyi hibát követtél el: " + mistake 
                 document.body.appendChild(hiba)
-            })
+                var valasz = document.querySelectorAll(".gombok")
+                valasz.forEach(function(aktual){
+                aktual.addEventListener('click', function(){
+                    let megnyomva = 0;
+                        this.style.backgroundColor = "Green";
+                        this.style.color = "white";
 
+                        this.style.backgroundColor = "gray";
+                        this.style.color = "black";
+
+                })
+                
+            })
+            })
+            
         </script>
     </main>
 
