@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyelvtanulás</title>
+</head>
+<body>
+    <header>
+        <h1>Nyelvtanulás</h1>
+    </header>
+    <main>
+        <button id="gomb">Kezdés</button>
+        <div id="fodiv">
+
+        </div>
+        <script>
+            const magyar = ["kutya", "macska", "okos", "gyönyörű"]
+            const angol = ["dog", "cat", "smart", "beautiful"]
+            const fodiv = document.getElementById("fodiv")
+            let button = document.getElementById("gomb")
+            button.addEventListener('click', 
+            function(){
+                for (let i = 0; i< magyar.length; i++){
+                    let div = document.createElement("div")
+                    for (let j = 0 ; j< magyar.length ; j++){
+                        let span = document.createElement("span");
+                        span.appendChild(magyar[j])
+                        
+                    }
+                }
+                
+
+            })
+        </script>
+    </main>
+
+</body>
+</html>
