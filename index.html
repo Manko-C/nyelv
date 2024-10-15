@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nyelvtanulás</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: aliceblue;
+
+        }
+        .mezo{
+            background-color: black;
+            color: white;
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -21,16 +35,22 @@
             let button = document.getElementById("gomb")
             button.addEventListener('click', 
             function(){
-                for (let i = 0; i< magyar.length; i++){
+                for (let i = 0; i< magyar.length-1; i++){
                     let div = document.createElement("div")
-                    for (let j = 0 ; j< magyar.length ; j++){
-                        let span = document.createElement("span");
-                        span.appendChild(magyar[j])
-                        
-                    }
-                }
-                
 
+                    for (let j = 0 ; j< magyar.length-1 ; j++){
+                        var span = document.createElement("span");
+                        span.className = "mezo"
+                        span.textContent = magyar[j]
+                        div.appendChild(span)
+                        
+
+                    }
+                    fodiv.appendChild(div);
+                    span.textContent = "";
+                    
+                }
+                document.body.appendChild(fodiv)
             })
         </script>
     </main>
