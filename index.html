@@ -78,19 +78,26 @@
                     fodivangol.appendChild(angoldiv)
                     document.body.appendChild(fodiv)
                     document.body.appendChild(fodivangol)
+                    var jo = 0;
             gomb.addEventListener("click", function() {
             let elsovalasztas = gomb.innerText;
             gomb.style.backgroundColor = "gray";
             angolgomb.addEventListener("click", function() {
-                let masodikvalasztas = angolgomb.innerText;
+            let masodikvalasztas = angolgomb.innerText;
+            angolgomb.style.backgroundColor = "gray";
+                
+            if (elsovalasztas == szotar[i].magyar && masodikvalasztas == szotar[i].angol) {
+                gomb.style.backgroundColor = "Green";
+                angolgomb.style.backgroundColor = "Green";
+                jo += 1
+                console.log(jo)
+                } 
+            else {
+                gomb.style.backgroundColor = "gray";
                 angolgomb.style.backgroundColor = "gray";
-                if (elsovalasztas == szotar[i].magyar && masodikvalasztas == szotar[i].angol) {
-                    gomb.style.backgroundColor = "Green";
-                    angolgomb.style.backgroundColor = "Green";
-                } else {
-                    gomb.style.backgroundColor = "White";
-                    angolgomb.style.backgroundColor = "White";
-                }
+            }
+                
+                
             })
         })
         
