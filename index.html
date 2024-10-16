@@ -83,19 +83,8 @@
                 let hiba = document.createElement("p")
                 hiba.textContent = "Ennyi hibát követtél el: " + mistake 
                 document.body.appendChild(hiba)
-                /*var valasz = document.querySelectorAll(".gombok")
-                valasz.forEach(function(aktual){
-                aktual.addEventListener('click', function(){
-                    let megnyomva = 0;
-                        this.style.backgroundColor = "Green";
-                        this.style.color = "white";
-
-                        this.style.backgroundColor = "gray";
-                        this.style.color = "black";
-
-                })
-                
-            })*/
+           for (let i = 0 ; i< szotar.length; i++){
+            
            
             gomb.addEventListener("click",function(){
             let elsovalasztas = gomb.innerText
@@ -107,15 +96,12 @@
                 if(elsovalasztas==szotar[i].magyar && masodikvalasztas==szotar[i].angol){
                     gomb.style.backgroundColor = "Green"
                     angolgomb.style.backgroundColor = "Green"
-                    helyesvalasz++
                     elsovalasztas="";
                     masodikvalasztas=""
-                    helyes.innerText="Helyes válaszok" + helyesvalasz;
                 }
                 else{
                     gomb.style.backgroundColor = "White";
                     angolgomb.style.backgroundColor = "White";
-                    helytelen++
                     elsovalasztas=""
                     masodikvalasztas=""
                 }
@@ -129,22 +115,20 @@
             gomb.addEventListener("click",function(){
                 let masodikvalasztas = angolgomb.innerText
                 let elsovalasztas = gomb.innerText
-                gomb1.style.backgroundColor = "olive"
+                gomb.style.backgroundColor = "olive"
                 if(elsovalasztas==szotar[i].magyar && masodikvalasztas==szotar[i].angol){
                     gomb.style.backgroundColor = "Green"
                     angolgomb.style.backgroundColor = "Green"
-                    helyesvalasz++
                     masodikvalasztas="";
                 }
                 else{
                     gomb.style.backgroundColor = "White";
                     angolgomb.style.backgroundColor = "White";
-                    helytelen++
                     masodikvalasztas=""
                 }
             })
         })
-        
+    }
             })
             
         </script>
