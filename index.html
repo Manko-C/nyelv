@@ -76,61 +76,28 @@
                     angoldiv.appendChild(angolgomb)
                     fodiv.appendChild(div);
                     fodivangol.appendChild(angoldiv)
-                }
-                document.body.appendChild(fodiv)
-                document.body.appendChild(fodivangol)
-                let mistake = 0;
-                let hiba = document.createElement("p")
-                hiba.textContent = "Ennyi hibát követtél el: " + mistake 
-                document.body.appendChild(hiba)
-           for (let i = 0 ; i< szotar.length; i++){
-            
-           
-            gomb.addEventListener("click",function(){
-            let elsovalasztas = gomb.innerText
-            gomb.style.backgroundColor = "olive";
-            angolgomb.addEventListener("click",function(){
-                
-                let masodikvalasztas = angolgomb.innerText
-                angolgomb.style.backgroundColor = "olive"
-                if(elsovalasztas==szotar[i].magyar && masodikvalasztas==szotar[i].angol){
-                    gomb.style.backgroundColor = "Green"
-                    angolgomb.style.backgroundColor = "Green"
-                    elsovalasztas="";
-                    masodikvalasztas=""
-                }
-                else{
+                    document.body.appendChild(fodiv)
+                    document.body.appendChild(fodivangol)
+            gomb.addEventListener("click", function() {
+            let elsovalasztas = gomb.innerText;
+            gomb.style.backgroundColor = "gray";
+            angolgomb.addEventListener("click", function() {
+                let masodikvalasztas = angolgomb.innerText;
+                angolgomb.style.backgroundColor = "gray";
+                if (elsovalasztas == szotar[i].magyar && masodikvalasztas == szotar[i].angol) {
+                    gomb.style.backgroundColor = "Green";
+                    angolgomb.style.backgroundColor = "Green";
+                } else {
                     gomb.style.backgroundColor = "White";
                     angolgomb.style.backgroundColor = "White";
-                    elsovalasztas=""
-                    masodikvalasztas=""
                 }
             })
-            
         })
         
-        angolgomb.addEventListener("click",function(){
-            
-            angolgomb.style.backgroundColor = "olive";
-            gomb.addEventListener("click",function(){
-                let masodikvalasztas = angolgomb.innerText
-                let elsovalasztas = gomb.innerText
-                gomb.style.backgroundColor = "olive"
-                if(elsovalasztas==szotar[i].magyar && masodikvalasztas==szotar[i].angol){
-                    gomb.style.backgroundColor = "Green"
-                    angolgomb.style.backgroundColor = "Green"
-                    masodikvalasztas="";
-                }
-                else{
-                    gomb.style.backgroundColor = "White";
-                    angolgomb.style.backgroundColor = "White";
-                    masodikvalasztas=""
-                }
-            })
-        })
     }
-            })
-            
+
+})
+           
         </script>
     </main>
 
